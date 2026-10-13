@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap");
+:root{--color-primary:#101318;--color-background:#0d0f12;--color-antique:#8c7e60;--color-burgundy:#4a1c25;--color-text:#e4dfd4;--color-text-muted:#a9a397;--color-border:rgba(140,126,96,.45);--color-burgundy-hover:#612632;--paper:#b9ad8d;--paper2:#a69a7a;--ink:#1c1812;--display:"Cinzel","Trajan Pro","Trajan",Georgia,serif;--serif:Georgia,"Palatino Linotype",serif;--hand:"Segoe Script","Brush Script MT",cursive}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background: var(--color-primary);color:var(--color-text);font-family:var(--serif);min-height:85vh;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--color-antique);outline-offset:2px}
+#sidebar{flex:0 0 200px;width:200px;background:var(--color-primary);border-right:2px solid var(--color-antique);box-shadow:inset -6px 0 0 var(--color-background);padding:22px 12px;overflow-y:auto;z-index:20;text-align:center}
+.emblem{width:78px;height:78px;object-fit:contain}
+#sidebar h1{font-size:.85rem;letter-spacing:.18em;color:var(--color-antique);margin:10px 0 2px}
+.sub{color:var(--color-text-muted);font-style:italic;margin:0 0 18px;border-bottom:1px solid var(--color-border);padding-bottom:14px}
+#nav button{display:flex;gap:12px;align-items:center;width:100%;background:none;border:1px solid transparent;color:var(--color-text);padding:10px 12px;margin:3px 0;text-align:left;letter-spacing:.05em}
+#nav button span{color:var(--color-antique);width:20px;text-align:center}
+#nav button:hover{border-color:var(--color-border)}
+#nav button[aria-current=page]{background:var(--color-burgundy);border-color:var(--color-antique)}
+.snd{display:block;margin-top:18px;color:var(--color-text-muted);font-size:.85rem}
+#menuBtn{display:none;position:fixed;top:10px;left:10px;z-index:30;background:var(--color-burgundy);color:var(--color-text);border:1px solid var(--color-antique);padding:8px 13px;font-size:1.2rem}
+.app{width:1000px;max-width:100%;margin:28px auto;display:flex;align-items:stretch}
+main{flex:1;min-width:0;padding:0 6px 0 14px}
+.book{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr);width:100%;height:700px;margin:0 auto;box-shadow:0 20px 60px #000,0 0 0 6px var(--color-primary);position:relative}
+.book::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:46px;margin-left:-23px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.45),transparent);pointer-events:none}
+.page{min-height:0;padding-bottom:40px!important;background:linear-gradient(135deg,var(--paper),var(--paper2));color:var(--ink);padding:26px 28px 40px;position:relative;line-height:1.55;font-size:.95rem;box-shadow:inset 0 0 70px rgba(60,40,10,.4)}
+.page::after{content:attr(data-n);position:absolute;bottom:10px;width:100%;left:0;text-align:center;font-size:.8rem;color:var(--color-burgundy)}
+.page.in{animation:turn .55s ease both}
+@keyframes turn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+h2{color:var(--color-burgundy);font-size:1.7rem;margin:0 0 6px;border-bottom:2px double var(--color-antique);padding-bottom:6px}
+h3{color:var(--color-burgundy);margin:18px 0 4px;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase}
+.page p{margin:.5em 0}
+.drop::first-letter{float:left;font-size:3.4rem;line-height:.85;padding:4px 8px 0 0;color:var(--color-burgundy);font-weight:bold}
+.note{font-family:var(--hand);color:var(--color-burgundy);transform:rotate(-1.5deg);margin:12px 0;padding-left:12px;border-left:2px solid var(--color-burgundy);font-size:.95rem}
+dl{margin:0}dt{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--color-burgundy)}dd{margin:0 0 8px;border-bottom:1px dotted rgba(28,24,18,.4)}
+.quote{font-style:italic;text-align:center;border-top:1px solid var(--color-burgundy);border-bottom:1px solid var(--color-burgundy);padding:10px;margin-top:14px}
+.portrait{aspect-ratio:3/4;max-width:290px;margin:0 auto;border:3px double var(--color-antique); display:grid;place-items:center;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.cap{text-align:center;font-size:2rem;color:var(--color-burgundy);margin-top:10px}
+.cap small{display:block;font-size:.9rem;color:var(--ink);font-style:italic}
+ul.k{padding-left:20px;margin:4px 0}ul.k li::marker{color:var(--color-burgundy)}
+.secret{display:block;width:100%;margin:8px 0;padding:8px 12px;background:var(--color-primary);color:var(--color-antique);border:1px dashed var(--color-antique);text-align:left}
+.secret[aria-pressed=true]{background:rgba(74,28,37,.2);color:var(--ink);border:1px solid var(--color-burgundy)}
+.tl{list-style:none;margin:0;padding:0 0 0 20px;border-left:2px solid var(--color-burgundy)}
+.tl button{background:none;border:0;color:var(--ink);text-align:left;width:100%;padding:6px 8px;position:relative}
+.tl button::before{content:"";position:absolute;left:-29px;top:14px;width:12px;height:12px;background:var(--color-antique);border:2px solid var(--color-burgundy);border-radius:50%}
+.tl button[aria-current=true]{background:rgba(74,28,37,.18)}
+.tl button[aria-current=true]::before{background:var(--color-burgundy)}
+.controls{max-width:none;margin:16px auto 0;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+.controls button{background:var(--color-primary);color:var(--color-text);border:1px solid var(--color-antique);padding:9px 16px}
+.controls button:hover:not(:disabled){background:var(--color-burgundy)}
+.controls button:disabled{opacity:.4;cursor:default}
+#ind{color:var(--color-text-muted);min-width:90px;text-align:center}
+@media(max-width:800px){#menuBtn{display:block}#sidebar{transform:translateX(-100%);transition:transform .3s}#sidebar.open{transform:none}#sidebar{position:fixed;top:0;bottom:0;left:0;width:260px}.app{display:block;width:auto;margin:0}main{padding:60px 10px 20px}.book{grid-template-columns:1fr;grid-template-rows:auto;height:auto}.book::after{display:none}.page{padding:26px 20px 40px}#nav button{padding:14px 12px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.ficha{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.compact{font-size:.88rem;line-height:1.4}
+.compact .drop::first-letter{font-size:2.8rem}
+
+/* Tipografía de títulos: estilo romano grabado (Cinzel, la más cercana a la de Assassin's Creed) */
+#sidebar h1,h2,h3,.cap,#nav button,.controls button,dt,.secret{font-family:var(--display)}
+h2{font-size:1.5rem;letter-spacing:.05em}
+.cap{font-size:1.5rem;letter-spacing:.04em}
+#nav button{font-size:.78rem;letter-spacing:.03em;padding:10px 8px;font-weight:500}
+h3,#sidebar h1{font-weight:700}
+.secret{font-size:.78rem;letter-spacing:.04em}
+@media(max-width:800px){.page:empty{display:none}}
